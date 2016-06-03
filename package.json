@@ -1,6 +1,6 @@
 {
   "name": "@marionebl/git-fs-repo",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "filesystem backed git repository",
   "main": "index.js",
   "scripts": {
