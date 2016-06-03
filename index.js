@@ -1,7 +1,7 @@
 module.exports = repository
 
 var autoregister = require('git-autoregister-odb')
-  , loadrefs = require('git-load-refs')
+  , loadrefs = require('@marionebl/git-load-refs')
   , loose = require('git-odb-loose')
   , pack = require('git-odb-pack')
   , to_js = require('git-to-js')
@@ -72,9 +72,9 @@ proto.ref = function(name, follow) {
 
   for(var i = 0, len = refs.length; i < len; ++i) {
     if(refs[i].name === name) {
-      return follow && refs[i].symbolic ? 
+      return follow && refs[i].symbolic ?
         this.ref(refs[i].ref, true) :
-        refs[i] 
+        refs[i]
     }
   }
   return null
@@ -95,12 +95,12 @@ proto.refs = function(follow) {
     seen = []
     tmp = []
     for(var i = 0, len = out.length; i < len; ++i) {
-      if(seen.indexOf(out[i].hash) > -1) { 
+      if(seen.indexOf(out[i].hash) > -1) {
         continue
       }
       seen[seen.length] = out[i].hash
       tmp[tmp.length] = out[i]
-    }    
+    }
     out = tmp
   }
 
